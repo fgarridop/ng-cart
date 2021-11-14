@@ -16,7 +16,6 @@ import { Helpers } from '../services/helpers.service';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css'],
 })
 export class ProductosComponent implements OnDestroy, OnInit {
   @ViewChild(DataTableDirective, { static: false })

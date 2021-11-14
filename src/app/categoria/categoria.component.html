@@ -1,14 +1,46 @@
-<div class="row row-cols-1 row-cols-md-4 g-4">
-  <div class="col" *ngFor="let producto of productos">
-    <div class="card">
-      <img
-        [src]="producto.image"
-        class="card-img-top p-3"
-        [alt]="producto.title"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ producto.title }}</h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container-fluid bg-light">
+  <div class="container py-5">
+    <div class="row my-2">
+      <div class="col-12">
+        <h1 class="box-title border-bottom pb-2">
+          Productos destacados en: {{ category }}
+        </h1>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 product-list">
+      <span
+        class="float-end fs-6 text-primary m-auto mt-5 btn-outline-primary"
+        *ngIf="isLoading"
+      >
+        <div
+          class="spinner-border text-primary spinner-border-sm"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        Cargargando {{ category }}
+      </span>
+
+      <div class="card-group" *ngFor="let producto of productos">
+        <div class="card">
+          <div class="row g-0">
+            <div class="col-md-12 p-0 m-0 text-center">
+              <img
+                [src]="producto.image"
+                class="card-img-top img-fluid text-center p-3 hvr-grow"
+                [alt]="producto.title"
+              />
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.title }}</h5>
+          </div>
+          <div class="card-bottom p-1">
+            <a href="#" class="btn btn-link"
+              >Ver Más <i class="material-icons">navigate_next</i></a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
