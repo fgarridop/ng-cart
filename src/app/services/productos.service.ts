@@ -26,4 +26,10 @@ export class ProductosService {
       `https://fakestoreapi.com/products/category/${cat}`
     );
   }
+
+  getProductoById(id: number): Observable<ProductoInterface> {
+    return this.http.get<ProductoInterface>(
+      `https://fakestoreapi.com/products/${id}`
+    );
+  }
 }

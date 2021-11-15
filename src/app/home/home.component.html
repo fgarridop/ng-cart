@@ -33,21 +33,21 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="https://via.placeholder.com/1200x400"
+                  src="https://picsum.photos/1200/400"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="https://via.placeholder.com/1200x400"
+                  src="https://picsum.photos/1200/400"
                   class="d-block w-100"
                   alt="..."
                 />
               </div>
               <div class="carousel-item">
                 <img
-                  src="https://via.placeholder.com/1200x400"
+                  src="https://picsum.photos/1200/400"
                   class="d-block w-100"
                   alt="..."
                 />
@@ -120,7 +120,7 @@
             <h5 class="card-title">{{ producto.title }}</h5>
           </div>
           <div class="card-bottom p-1">
-            <a href="#" class="btn btn-link"
+            <a [routerLink]="['/producto', producto.id]" class="btn btn-link"
               >Ver Más <i class="material-icons">navigate_next</i></a
             >
           </div>

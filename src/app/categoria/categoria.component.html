@@ -1,5 +1,16 @@
 <div class="container-fluid bg-light">
-  <div class="container py-5">
+  <div class="container py-5 text-center" *ngIf="isLoading">
+    <span
+      class="float-end fs-6 text-primary m-auto mt-5 btn-outline-primary w-100"
+    >
+      <div class="spinner-border text-primary spinner-border-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      Cargargando Productos
+    </span>
+  </div>
+
+  <div class="container py-5" *ngIf="!isLoading">
     <div class="row my-2">
       <div class="col-12">
         <h1 class="box-title border-bottom pb-2">
@@ -8,19 +19,6 @@
       </div>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4 product-list">
-      <span
-        class="float-end fs-6 text-primary m-auto mt-5 btn-outline-primary"
-        *ngIf="isLoading"
-      >
-        <div
-          class="spinner-border text-primary spinner-border-sm"
-          role="status"
-        >
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        Cargargando {{ category }}
-      </span>
-
       <div class="card-group" *ngFor="let producto of productos">
         <div class="card">
           <div class="row g-0">
@@ -36,7 +34,7 @@
             <h5 class="card-title">{{ producto.title }}</h5>
           </div>
           <div class="card-bottom p-1">
-            <a href="#" class="btn btn-link"
+            <a [routerLink]="['/producto', producto.id]" class="btn btn-link"
               >Ver Más <i class="material-icons">navigate_next</i></a
             >
           </div>

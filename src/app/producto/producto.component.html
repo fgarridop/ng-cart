@@ -1,0 +1,73 @@
+<div class="container-fluid bg-light">
+  <div class="container py-5 text-center" *ngIf="isLoading">
+    <span
+      class="float-end fs-6 text-primary m-auto mt-5 btn-outline-primary w-100"
+    >
+      <div class="spinner-border text-primary spinner-border-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      Cargargando Productos
+    </span>
+  </div>
+
+  <div class="container py-5" *ngIf="!isLoading">
+    <div class="row my-2">
+      <div class="col-12">
+        <h1 class="box-title border-bottom pb-2">{{ producto.title }}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <span
+        class="float-end fs-6 text-primary m-auto mt-5 btn-outline-primary"
+        *ngIf="isLoading"
+      >
+        <div
+          class="spinner-border text-primary spinner-border-sm"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        Cargargando Productos
+      </span>
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-4 bg-white p-5">
+            <img
+              [src]="producto.image"
+              class="img-fluid hvr-grow"
+              [alt]="producto.title"
+            />
+          </div>
+          <div class="col-md-8 ps-4">
+            <button
+              class="
+                btn btn-link
+                badge
+                rounded-pill
+                bg-warning
+                text-dark text-white
+                my-4
+              "
+              [routerLink]="['/categoria', producto.category]"
+            >
+              Categoría: {{ producto.category }}
+            </button>
+
+            <h2>{{ producto.price | currency }}</h2>
+            <p>{{ producto.description }}</p>
+
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-outline-primary">
+                  Agregar al Carro
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

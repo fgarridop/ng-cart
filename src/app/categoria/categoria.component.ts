@@ -7,7 +7,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-categoria',
   templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.css'],
 })
 export class CategoriaComponent implements OnInit {
   productos: ProductoInterface[];
