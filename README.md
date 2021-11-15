@@ -2,6 +2,8 @@
 
 Visit the project [ng-cart](http://ng-cart.mrti.cl)
 
+This project use [Fake Store Api](https://fakestoreapi.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 ## Development server
